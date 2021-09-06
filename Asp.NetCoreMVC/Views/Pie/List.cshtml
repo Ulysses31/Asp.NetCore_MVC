@@ -1,0 +1,27 @@
+﻿@model PiesListViewModel
+@{ 
+	ViewData["Title"] = "List";
+}
+
+<h2>Pie List</h2>
+
+<table class="table table-hover">
+	<caption>@Model.CurrentCategory</caption>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Image</th>
+			<th>Name</th>
+			<th>Price</th>
+			<th>Category</th>
+			<th>InStock</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var pie in Model.Pies)
+		{
+			<partial name="_Pie" model="pie" />
+		}
+	</tbody>
+</table>

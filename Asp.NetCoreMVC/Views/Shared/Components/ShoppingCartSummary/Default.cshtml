@@ -1,0 +1,10 @@
+﻿@model ShoppingCartViewModel
+
+<a asp-controller="ShoppingCart"
+	 asp-action="Index"
+	 style="text-decoration: none">
+	<i class="bi bi-cart2" style="font-size: 1.6em"></i>
+	<span id="card-status">
+		@Model.ShoppingCart.ShoppingCartItems.Count
+	</span>
+</a>

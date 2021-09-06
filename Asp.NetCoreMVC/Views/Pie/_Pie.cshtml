@@ -1,0 +1,32 @@
+﻿@model Pie
+
+<tr>
+	<td nowrap>@Model.PieId</td>
+	<td nowrap>
+		<img src="@Model.ImageThumbnailUrl"
+				 alt="@Model.Name"
+				 class="img-thumbnail"
+				 style="width: 175px" />
+	</td>
+	<td nowrap>
+		<a asp-controller="Pie"
+			 asp-action="Details"
+			 asp-route-id="@Model.PieId">
+			@Model.Name
+		</a>
+	</td>
+	<td nowrap>@Model.Price.ToString("c")</td>
+	<td nowrap>@Model.Category.CategoryName</td>
+	<td nowrap>
+		@if (@Model.InStock)
+		{
+			<img src="~/images/tick.png" style="width: 25px" />
+		}
+	</td>
+	<td nowrap>
+		<a class="btn btn-sm btn-success"
+			 asp-controller="ShoppingCart"
+			 asp-action="AddToShoppingCart"
+			 asp-route-pieId="@Model.PieId">Add to cart</a>
+	</td>
+</tr>

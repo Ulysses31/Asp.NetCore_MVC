@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Pie>
+
+@{
+	ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+	<h1 class="display-4">Welcome</h1>
+	<br />
+	<h2>Pies of the week.</h2>
+	<br />
+	<div class="row row-cols-1 row-cols-md-2">
+		@foreach (var pie in @Model)
+		{
+			<partial name="_PieOfTheWeek" model="@pie" />
+		}
+	</div>
+
+</div>

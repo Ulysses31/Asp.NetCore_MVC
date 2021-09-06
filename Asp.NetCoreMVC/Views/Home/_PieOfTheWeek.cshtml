@@ -1,0 +1,14 @@
+﻿@model Pie
+
+<div class="col mb-4">
+	<div class="card h-100">
+		<img src="@Model.ImageThumbnailUrl"
+				 class="card-img-top"
+				 alt="@Model.Name">
+		<div class="card-body">
+			<h5 class="card-title">@Model.Name</h5>
+			<p class="card-text">@Model.ShortDescription</p>
+			<p class="card-text">@Model.Price.ToString("c")</p>
+		</div>
+	</div>
+</div>

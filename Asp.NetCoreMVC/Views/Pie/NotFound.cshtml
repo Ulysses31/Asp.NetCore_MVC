@@ -1,0 +1,13 @@
+﻿@model int
+
+@{
+    ViewData["Title"] = "Not Found";
+}
+
+<h2 class="text-danger">Pie with id @Model not found.</h2>
+<a class="btn btn-primary btn-lg"
+	 role="button"
+	 asp-controller="Pie"
+	 asp-action="List">
+	Pies
+</a>
