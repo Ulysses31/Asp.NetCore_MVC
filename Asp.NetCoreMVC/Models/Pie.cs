@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Asp.NetCoreMVC.Models
@@ -49,5 +50,7 @@ namespace Asp.NetCoreMVC.Models
 		public int? CategoryId { get; set; }
 
 		public Category Category { get; set; }
+
+		public List<PieReview> PieReviews  { get; set; }
 	}
 }

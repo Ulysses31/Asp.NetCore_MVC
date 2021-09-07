@@ -40,6 +40,7 @@ namespace Asp.NetCoreMVC
 			// services.AddScoped<IPieRepository, MockPieRepository>();
 			// services.AddScoped<ICategoryRepository, MockCategoryRepository>();
 			services.AddScoped<IPieRepository, PieRepository>();
+			services.AddScoped<IPieReviewRepository, PieReviewRepository>();
 			services.AddScoped<ICategoryRepository, CategoryRepository>();
 			services.AddScoped<IOrderRepository, OrderRepository>();
 

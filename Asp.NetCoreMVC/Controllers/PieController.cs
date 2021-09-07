@@ -4,6 +4,7 @@ using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 
 namespace Asp.NetCoreMVC.Controllers
 {
@@ -11,16 +12,19 @@ namespace Asp.NetCoreMVC.Controllers
 	{
 		private readonly INotyfService _notyf;
 		private readonly IPieRepository _pieRepository;
+		private readonly IPieReviewRepository _pieReviewRepository;
 		private readonly ICategoryRepository _categoryRepository;
 
 		public PieController(
 			INotyfService notyf,
 			IPieRepository pieRepository,
+			IPieReviewRepository pieReviewRepository,
 			ICategoryRepository categoryRepository
 		)
 		{
 			this._notyf = notyf;
 			this._pieRepository = pieRepository;
+			this._pieReviewRepository = pieReviewRepository;
 			this._categoryRepository = categoryRepository;
 		}
 
@@ -47,6 +51,7 @@ namespace Asp.NetCoreMVC.Controllers
 			});
 		}
 
+		[Route("[controller]/Details/{id}")]
 		public IActionResult Details(int id)
 		{
 			var pie = _pieRepository.GetPieById(id);
@@ -55,7 +60,36 @@ namespace Asp.NetCoreMVC.Controllers
 				return View("./NotFound", id);
 			}
 
-			return View(pie);
+			return View(new PieDetailViewModel() {
+				Pie = pie
+			});
+		}
+
+		[Route("[controller]/Details/{id}")]
+		[HttpPost]
+		public IActionResult Details(int id, string review)
+		{
+			if(string.IsNullOrEmpty(review)) {
+				ModelState.AddModelError("", "Review is required.");
+			}
+
+			var pie = _pieRepository.GetPieById(id);
+
+			if (pie == null) {
+				return NotFound();
+			}
+
+			if (ModelState.IsValid) {
+				_pieReviewRepository.AddPieReview(new PieReview() {
+					Pie = pie,
+					Review = review,
+					UserId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value
+				});
+			}
+
+			return View(new PieDetailViewModel() {
+				Pie = pie
+			});
 		}
 	}
 }

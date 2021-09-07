@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Asp.NetCoreMVC.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210907081455_Initial")]
+    [Migration("20210907181242_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -126,7 +126,7 @@ namespace Asp.NetCoreMVC.Migrations
                         .HasColumnType("nvarchar(25)")
                         .HasColumnName("PhoneNumber");
 
-                    b.Property<string>("Shipper")
+                    b.Property<string>("ShipperType")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("ShipperType");
@@ -300,6 +300,36 @@ namespace Asp.NetCoreMVC.Migrations
                             Price = 12.95m,
                             ShortDescription = "Lorem Ipsum"
                         });
+                });
+
+            modelBuilder.Entity("Asp.NetCoreMVC.Models.PieReview", b =>
+                {
+                    b.Property<int>("PieReviewId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("PieReviewId")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("PieId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Review")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("Review");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("UserId");
+
+                    b.HasKey("PieReviewId");
+
+                    b.HasIndex("PieId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("PieReview");
                 });
 
             modelBuilder.Entity("Asp.NetCoreMVC.Models.ShoppingCartItem", b =>
@@ -566,6 +596,21 @@ namespace Asp.NetCoreMVC.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("Asp.NetCoreMVC.Models.PieReview", b =>
+                {
+                    b.HasOne("Asp.NetCoreMVC.Models.Pie", "Pie")
+                        .WithMany("PieReviews")
+                        .HasForeignKey("PieId");
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Pie");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Asp.NetCoreMVC.Models.ShoppingCartItem", b =>
                 {
                     b.HasOne("Asp.NetCoreMVC.Models.Pie", "Pie")
@@ -634,6 +679,11 @@ namespace Asp.NetCoreMVC.Migrations
             modelBuilder.Entity("Asp.NetCoreMVC.Models.Order", b =>
                 {
                     b.Navigation("OrderDetails");
+                });
+
+            modelBuilder.Entity("Asp.NetCoreMVC.Models.Pie", b =>
+                {
+                    b.Navigation("PieReviews");
                 });
 #pragma warning restore 612, 618
         }

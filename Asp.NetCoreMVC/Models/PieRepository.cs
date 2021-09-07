@@ -22,6 +22,8 @@ namespace Asp.NetCoreMVC.Models
 		{
 			return _dbContext.Pies
 				.Include(c => c.Category)
+				.Include(c => c.PieReviews)
+				.ThenInclude(c => c.User)
 				.FirstOrDefault(p => p.PieId == pieId);
 		}
 

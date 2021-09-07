@@ -233,6 +233,31 @@ namespace Asp.NetCoreMVC.Migrations
 					});
 
 			migrationBuilder.CreateTable(
+					name: "PieReview",
+					columns: table => new {
+						PieReviewId = table.Column<int>(type: "int", nullable: false)
+									.Annotation("SqlServer:Identity", "1, 1"),
+						PieId = table.Column<int>(type: "int", nullable: true),
+						UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+						Review = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false)
+					},
+					constraints: table => {
+						table.PrimaryKey("PK_PieReview", x => x.PieReviewId);
+						table.ForeignKey(
+											name: "FK_PieReview_AspNetUsers_UserId",
+											column: x => x.UserId,
+											principalTable: "AspNetUsers",
+											principalColumn: "Id",
+											onDelete: ReferentialAction.Restrict);
+						table.ForeignKey(
+											name: "FK_PieReview_Pie_PieId",
+											column: x => x.PieId,
+											principalTable: "Pie",
+											principalColumn: "PieId",
+											onDelete: ReferentialAction.Restrict);
+					});
+
+			migrationBuilder.CreateTable(
 					name: "ShoppingCartItem",
 					columns: table => new {
 						ShoppingCartItemId = table.Column<int>(type: "int", nullable: false)
@@ -337,6 +362,16 @@ namespace Asp.NetCoreMVC.Migrations
 					column: "CategoryId");
 
 			migrationBuilder.CreateIndex(
+					name: "IX_PieReview_PieId",
+					table: "PieReview",
+					column: "PieId");
+
+			migrationBuilder.CreateIndex(
+					name: "IX_PieReview_UserId",
+					table: "PieReview",
+					column: "UserId");
+
+			migrationBuilder.CreateIndex(
 					name: "IX_ShoppingCartItem_PieId",
 					table: "ShoppingCartItem",
 					column: "PieId");
@@ -361,6 +396,9 @@ namespace Asp.NetCoreMVC.Migrations
 
 			migrationBuilder.DropTable(
 					name: "OrderDetail");
+
+			migrationBuilder.DropTable(
+					name: "PieReview");
 
 			migrationBuilder.DropTable(
 					name: "ShoppingCartItem");
