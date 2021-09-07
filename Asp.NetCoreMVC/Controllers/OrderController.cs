@@ -1,4 +1,5 @@
 ﻿using Asp.NetCoreMVC.Models;
+using Asp.NetCoreMVC.Models.ViewModels;
 using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -16,6 +17,7 @@ namespace Asp.NetCoreMVC.Controllers
 		private readonly INotyfService _notyf;
 		private readonly IOrderRepository _orderRepository;
 		private readonly ShoppingCart _shoppingCart;
+
 		public IEnumerable<SelectListItem> Shippers { get; set; }
 
 		public OrderController(
@@ -34,23 +36,29 @@ namespace Asp.NetCoreMVC.Controllers
 		public ViewResult List()
 		{
 			var userId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+
 			IEnumerable<Order> orders = _orderRepository
 																		.GetAllOrders(userId)
 																		.OrderByDescending(o => o.OrderPlaced);
+
 			return View(orders);
 		}
 
 		public IActionResult Checkout()
 		{
-			return View();
+			Shippers = _htmlHelper.GetEnumSelectList<ShipperType>();
+
+			CheckoutViewModel checkoutViewModel = new CheckoutViewModel {
+				Order = new Order(),
+				Shippers = Shippers
+			};
+
+			return View(checkoutViewModel);
 		}
 
 		[HttpPost]
 		public IActionResult Checkout(Order order)
 		{
-			Shippers = _htmlHelper.GetEnumSelectList<Shipper>();
-			order.Shippers = Shippers;
-
 			var items = _shoppingCart.GetShoppingCartItems();
 			_shoppingCart.ShoppingCartItems = items;
 

@@ -77,12 +77,10 @@ namespace Asp.NetCoreMVC.Models
 		[Required]
 		public string Email { get; set; }
 
-		[Column("Shipper", TypeName = "nvarchar(50)")]
-		[Display(Name = "Shipper")]
+		[Column("ShipperType", TypeName = "nvarchar(50)")]
+		[Display(Name = "ShipperType")]
 		[Required]
-		public Shipper Shipper { get; set; }
-
-		public IEnumerable<SelectListItem> Shippers;
+		public ShipperType ShipperType { get; set; }
 
 		[BindNever]
 		[Column("OrderTotal", TypeName = "decimal(18,2)")]

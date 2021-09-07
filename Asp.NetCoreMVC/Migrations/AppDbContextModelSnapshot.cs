@@ -124,6 +124,11 @@ namespace Asp.NetCoreMVC.Migrations
                         .HasColumnType("nvarchar(25)")
                         .HasColumnName("PhoneNumber");
 
+                    b.Property<string>("Shipper")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("ShipperType");
+
                     b.Property<string>("State")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")

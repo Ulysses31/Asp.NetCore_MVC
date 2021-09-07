@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Asp.NetCoreMVC.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210906131154_Initial")]
+    [Migration("20210907081455_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -125,6 +125,11 @@ namespace Asp.NetCoreMVC.Migrations
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)")
                         .HasColumnName("PhoneNumber");
+
+                    b.Property<string>("Shipper")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("ShipperType");
 
                     b.Property<string>("State")
                         .HasMaxLength(50)

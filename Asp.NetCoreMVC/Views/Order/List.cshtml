@@ -20,6 +20,7 @@
 					<th>Address</th>
 					<th>City</th>
 					<th>Country</th>
+					<th>Shipper</th>
 					<th>Total</th>
 				</tr>
 			</thead>
@@ -30,10 +31,11 @@
 					<td>@order.AddressLine1</td>
 					<td>@order.City</td>
 					<td>@order.Country</td>
+					<td>@order.ShipperType</td>
 					<td><b>@order.OrderTotal.ToString("c")</b></td>
 				</tr>
 				<tr>
-					<td colspan="6">
+					<td colspan="7">
 						<div class="card">
 							<div class="card-header">
 								@order.OrderDetails.Count order items.
@@ -52,8 +54,8 @@
 										</tr>
 									</thead>
 									<tbody>
-										@foreach (var orderDetail in order.OrderDetails)
-										{
+									@foreach (var orderDetail in order.OrderDetails)
+									{
 										<tr>
 											<td>@orderDetail.OrderDetailId</td>
 											<td>
@@ -69,7 +71,7 @@
 												@((orderDetail.Pie.Price * orderDetail.Amount).ToString("c"))
 											</td>
 										</tr>
-										}
+									}
 									</tbody>
 								</table>
 							</div>
@@ -79,7 +81,7 @@
 			</tbody>
 		</table>
 	</div>
-</div>} }
-			else
-			{
-<h3>No Orders found.</h3>}
+</div>} 
+} else {
+	<h3>No Orders found.</h3>
+}

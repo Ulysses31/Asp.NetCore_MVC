@@ -165,6 +165,7 @@ namespace Asp.NetCoreMVC.Migrations
 						Country = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
 						PhoneNumber = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
 						Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+						ShipperType = table.Column<string>(type: "nvarchar(50)", nullable: false),
 						OrderTotal = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
 						UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
 						OrderPlaced = table.Column<DateTime>(type: "datetime2", nullable: false)
