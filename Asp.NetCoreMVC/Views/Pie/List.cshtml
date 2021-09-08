@@ -1,20 +1,21 @@
-﻿@model PiesListViewModel
-@{ 
-	ViewData["Title"] = "List";
-}
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@model PiesListViewModel
+@inject IViewLocalizer Localizer
 
-<h2>Pie List</h2>
+@{ ViewData["Title"] = Localizer["Title"]; }
+
+<h2>@ViewData["Title"]</h2>
 
 <table class="table table-hover">
 	<caption>@Model.CurrentCategory</caption>
 	<thead>
 		<tr>
 			<th>#</th>
-			<th>Image</th>
-			<th>Name</th>
-			<th>Price</th>
-			<th>Category</th>
-			<th>InStock</th>
+			<th>@Localizer["Image"]</th>
+			<th>@Localizer["Name"]</th>
+			<th>@Localizer["Price"]</th>
+			<th>@Localizer["Category"]</th>
+			<th>@Localizer["InStock"]</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -22,6 +23,6 @@
 		@foreach (var pie in Model.Pies)
 		{
 			<partial name="_Pie" model="pie" />
-		}
+}
 	</tbody>
 </table>

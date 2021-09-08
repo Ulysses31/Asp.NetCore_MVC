@@ -117,16 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MenuLogin" xml:space="preserve">
-    <value>Login</value>
+  <data name="Amount" xml:space="preserve">
+    <value>Ποσότητα</value>
   </data>
-  <data name="MenuLogout" xml:space="preserve">
-    <value>Logout</value>
+  <data name="Checkout" xml:space="preserve">
+    <value>Αγορά</value>
   </data>
-  <data name="MenuRegister" xml:space="preserve">
-    <value>Register</value>
+  <data name="Header" xml:space="preserve">
+    <value>Το καλάθι αγορών σας</value>
   </data>
-  <data name="MenuWelcome" xml:space="preserve">
-    <value>Hello</value>
+  <data name="Image" xml:space="preserve">
+    <value>Εικόνα</value>
+  </data>
+  <data name="NoItems" xml:space="preserve">
+    <value>Δεν υπάρχουν προιόντα στο καλάθι σας.</value>
+  </data>
+  <data name="Pie" xml:space="preserve">
+    <value>Είδος</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Τιμή</value>
+  </data>
+  <data name="SubHeader" xml:space="preserve">
+    <value>Δείτε τις πίτες στο καλάθι αγορών σας.</value>
+  </data>
+  <data name="SubTotal" xml:space="preserve">
+    <value>Σύνολο</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Τελική Τιμή</value>
   </data>
 </root>

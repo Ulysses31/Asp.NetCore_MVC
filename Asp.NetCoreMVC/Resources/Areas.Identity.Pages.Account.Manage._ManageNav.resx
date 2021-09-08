@@ -117,16 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MenuLogin" xml:space="preserve">
-    <value>Login</value>
+  <data name="MenuEmail" xml:space="preserve">
+    <value>Email</value>
   </data>
-  <data name="MenuLogout" xml:space="preserve">
-    <value>Logout</value>
+  <data name="MenuExtLogins" xml:space="preserve">
+    <value>External logins</value>
   </data>
-  <data name="MenuRegister" xml:space="preserve">
-    <value>Register</value>
+  <data name="MenuFactor" xml:space="preserve">
+    <value>Two-factor authentication</value>
   </data>
-  <data name="MenuWelcome" xml:space="preserve">
-    <value>Hello</value>
+  <data name="MenuPassword" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="MenuPersonalData" xml:space="preserve">
+    <value>Personal data</value>
+  </data>
+  <data name="MenuProfile" xml:space="preserve">
+    <value>Profile</value>
   </data>
 </root>

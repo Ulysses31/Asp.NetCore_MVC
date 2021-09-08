@@ -1,82 +1,81 @@
-﻿@model ShoppingCartViewModel
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@model ShoppingCartViewModel
+@inject IViewLocalizer Localizer
 
-@{
-	ViewData["Title"] = "Shopping Cart";
-}
+@{ ViewData["Title"] = Localizer["Header"]; }
 
-<h2>Your Shopping Cart</h2>
-<h4>Here are the delicious pies in your shopping cart.</h4>
+<h2>@ViewData["Title"]</h2>
+<h4 class="text-muted">@Localizer["SubHeader"]</h4>
 <br />
 
 @if (Model.ShoppingCart.ShoppingCartItems.Count > 0)
 {
-	<table class="table table-hover">
-		<thead>
-			<tr>
-				<th>Image</th>
-				<th>Amount</th>
-				<th>Pie</th>
-				<th>Price</th>
-				<th>SubTotal</th>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach (var item in Model.ShoppingCart.ShoppingCartItems)
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>@Localizer["Image"]</th>
+			<th>@Localizer["Amount"]</th>
+			<th>@Localizer["Pie"]</th>
+			<th>@Localizer["Price"]</th>
+			<th>@Localizer["SubTotal"]</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.ShoppingCart.ShoppingCartItems)
+		{
+<tr>
+	<td>
+		<img src=@item.Pie.ImageThumbnailUrl
+				 alt=@item.Pie.Name
+				 class="img-thumbnail shadow-sm"
+				 style="width: 175px" />
+	</td>
+	<td>
+		<div class="input-group mb-3">
+			<input type="text"
+						 class="form-control"
+						 value="@item.Amount"
+						 style="width: 10px"
+						 readonly>
+			<div class="input-group-append">
+				<a class="btn btn-outline-secondary"
+					 asp-controller="ShoppingCart"
+					 asp-action="AddToShoppingCart"
+					 asp-route-pieId=@item.Pie.PieId>
+					+
+				</a>
+				<a class="btn btn-outline-secondary"
+					 asp-controller="ShoppingCart"
+					 asp-action="RemoveFromShoppingCart"
+					 asp-route-pieId=@item.Pie.PieId>
+					-
+				</a>
+			</div>
+		</div>
+	</td>
+	<td>@item.Pie.Name</td>
+	<td>@item.Pie.Price.ToString("c")</td>
+	<td>@((item.Amount * item.Pie.Price).ToString("c"))</td>
+</tr>}
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="4" class="text-right">
+				<b>@Localizer["Total"]</b>
+			</td>
+			<td class="text-right">
+				@Model.ShoppingCartTotal.ToString("c")
+			</td>
+		</tr>
+	</tfoot>
+</table>
+				<div class="text-center">
+					<a class="btn btn-primary shadow-sm"
+						 asp-controller="Order"
+						 asp-action="Checkout">
+						@Localizer["Checkout"]
+					</a>
+				</div> }
+			else
 			{
-				<tr>
-					<td>
-						<img src=@item.Pie.ImageThumbnailUrl
-								 alt=@item.Pie.Name
-								 class="img-thumbnail shadow-sm"
-								 style="width: 175px" />
-					</td>
-					<td>
-						<div class="input-group mb-3">
-							<input type="text"
-										 class="form-control"
-										 value="@item.Amount"
-										 style="width: 10px"
-										 readonly>
-							<div class="input-group-append">
-								<a class="btn btn-outline-secondary"
-												asp-controller="ShoppingCart"
-												asp-action="AddToShoppingCart"
-												asp-route-pieId=@item.Pie.PieId>
-									+
-								</a>
-								<a class="btn btn-outline-secondary"
-												asp-controller="ShoppingCart"
-												asp-action="RemoveFromShoppingCart"
-												asp-route-pieId=@item.Pie.PieId>
-									-
-								</a>
-							</div>
-						</div>
-					</td>
-					<td>@item.Pie.Name</td>
-					<td>@item.Pie.Price.ToString("c")</td>
-					<td>@((item.Amount * item.Pie.Price).ToString("c"))</td>
-				</tr>
-			}
-		</tbody>
-		<tfoot>
-			<tr>
-				<td colspan="4" class="text-right">Total:</td>
-				<td class="text-right">
-					@Model.ShoppingCartTotal.ToString("c")
-				</td>
-			</tr>
-		</tfoot>
-	</table>
-	<div class="text-center">
-		<a class="btn btn-primary shadow-sm"
-			 asp-controller="Order"
-			 asp-action="Checkout">
-			Checkout
-		</a>
-	</div>
-}
-else
-{
-	<h5>No items in your cart.</h5>
-}
+<h5>@Localizer["NoItems"]</h5>}

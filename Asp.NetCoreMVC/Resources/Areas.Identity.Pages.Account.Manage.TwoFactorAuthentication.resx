@@ -117,16 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MenuLogin" xml:space="preserve">
-    <value>Login</value>
+  <data name="BtnAddAuth" xml:space="preserve">
+    <value>Add authenticator app</value>
   </data>
-  <data name="MenuLogout" xml:space="preserve">
-    <value>Logout</value>
+  <data name="BtnDisable2FA" xml:space="preserve">
+    <value>Disable 2FA</value>
   </data>
-  <data name="MenuRegister" xml:space="preserve">
-    <value>Register</value>
+  <data name="BtnFormForget" xml:space="preserve">
+    <value>Forget this browser</value>
   </data>
-  <data name="MenuWelcome" xml:space="preserve">
-    <value>Hello</value>
+  <data name="BtnRecoveryReset" xml:space="preserve">
+    <value>Reset recovery codes</value>
+  </data>
+  <data name="MenuHeader" xml:space="preserve">
+    <value>Two-factor authentication (2FA)</value>
+  </data>
+  <data name="MenuSubContent" xml:space="preserve">
+    <value>Authenticator app</value>
+  </data>
+  <data name="RecovCodes0First" xml:space="preserve">
+    <value>You must</value>
+  </data>
+  <data name="RecovCodes0Head" xml:space="preserve">
+    <value>You have no recovery codes left.</value>
+  </data>
+  <data name="RecovCodes0Link" xml:space="preserve">
+    <value>generate a new set of recovery codes</value>
+  </data>
+  <data name="RecovCodes0Second" xml:space="preserve">
+    <value>before you can log in with a recovery code.</value>
+  </data>
+  <data name="RecovCodes1First" xml:space="preserve">
+    <value>You can</value>
+  </data>
+  <data name="RecovCodes1Head" xml:space="preserve">
+    <value>You have 1 recovery code left.</value>
+  </data>
+  <data name="RecovCodes1Link" xml:space="preserve">
+    <value>generate a new set of recovery codes</value>
+  </data>
+  <data name="RecovCodes3HeadA" xml:space="preserve">
+    <value>You have</value>
+  </data>
+  <data name="RecovCodes3HeadAA" xml:space="preserve">
+    <value>You should</value>
+  </data>
+  <data name="RecovCodes3HeadB" xml:space="preserve">
+    <value>recovery codes left.</value>
+  </data>
+  <data name="RecovCodes3HeadBB" xml:space="preserve">
+    <value>generate a new set of recovery codes</value>
+  </data>
+  <data name="ResetAuthApp" xml:space="preserve">
+    <value>Reset authenticator app</value>
+  </data>
+  <data name="SetupAuthApp" xml:space="preserve">
+    <value>Setup authenticator app</value>
   </data>
 </root>

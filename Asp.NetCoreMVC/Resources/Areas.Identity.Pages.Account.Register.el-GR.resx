@@ -117,16 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MenuLogin" xml:space="preserve">
-    <value>Login</value>
+  <data name="FormBtnSubmit" xml:space="preserve">
+    <value>Εγγραφή</value>
   </data>
-  <data name="MenuLogout" xml:space="preserve">
-    <value>Logout</value>
+  <data name="FormEmail" xml:space="preserve">
+    <value>Ηλεκ. Διεύθυνση</value>
   </data>
-  <data name="MenuRegister" xml:space="preserve">
-    <value>Register</value>
+  <data name="FormPassword" xml:space="preserve">
+    <value>Κωδικός</value>
   </data>
-  <data name="MenuWelcome" xml:space="preserve">
-    <value>Hello</value>
+  <data name="FormPasswordConfirm" xml:space="preserve">
+    <value>Επιβεβαίωση κωδικού πρόσβασης</value>
+  </data>
+  <data name="HeaderText" xml:space="preserve">
+    <value>Εγγραφή</value>
+  </data>
+  <data name="RegisterNewUser" xml:space="preserve">
+    <value>Register as a new user</value>
+  </data>
+  <data name="ServiceRegisterContent" xml:space="preserve">
+    <value>Δεν έχουν ρυθμιστεί εξωτερικές υπηρεσίες ελέγχου ταυτότητας. Ανατρέξτε &lt;a href="https://go.microsoft.com/fwlink/?LinkID=532715" target="_blank"&gt;αυτό το άρθρο&lt;/a&gt; για λεπτομέρειες σχετικά με τη ρύθμιση αυτής της εφαρμογής για την υποστήριξη της σύνδεσης μέσω εξωτερικών υπηρεσιών.</value>
+  </data>
+  <data name="ServiceRegisterHeader" xml:space="preserve">
+    <value>Χρησιμοποιήστε μια άλλη υπηρεσία για να εγγραφείτε.</value>
+  </data>
+  <data name="SubHeader" xml:space="preserve">
+    <value>Δημιουργήστε έναν νέο λογαριασμό.</value>
   </data>
 </root>

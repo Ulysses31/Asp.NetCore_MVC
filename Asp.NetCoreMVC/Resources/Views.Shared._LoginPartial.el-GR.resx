@@ -120,7 +120,13 @@
   <data name="MenuLogin" xml:space="preserve">
     <value>Είσοδος</value>
   </data>
+  <data name="MenuLogout" xml:space="preserve">
+    <value>Έξοδος</value>
+  </data>
   <data name="MenuRegister" xml:space="preserve">
     <value>Εγγραφή</value>
+  </data>
+  <data name="MenuWelcome" xml:space="preserve">
+    <value>Γειά σας</value>
   </data>
 </root>
