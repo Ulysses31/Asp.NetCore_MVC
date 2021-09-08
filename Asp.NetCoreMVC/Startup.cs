@@ -4,10 +4,15 @@ using AspNetCoreHero.ToastNotification.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
+using System.Collections.Generic;
+using System.Globalization;
 
 namespace Asp.NetCoreMVC
 {
@@ -31,11 +36,36 @@ namespace Asp.NetCoreMVC
 				.AddEntityFrameworkStores<AppDbContext>();
 
 			// Toast Notifications
-			services.AddNotyf(config => { 
-				config.DurationInSeconds = 3; 
+			services.AddNotyf(config => {
+				config.DurationInSeconds = 3;
 				config.IsDismissable = true;
-				config.Position = NotyfPosition.BottomRight; 
+				config.Position = NotyfPosition.BottomRight;
 			});
+
+			// Localization
+			services.AddLocalization(opts => { opts.ResourcesPath = "Resources"; });
+			services.AddMvc()
+				.AddViewLocalization(
+						LanguageViewLocationExpanderFormat.Suffix,
+						opts => { opts.ResourcesPath = "Resources"; })
+				.AddDataAnnotationsLocalization();
+			services.Configure<RequestLocalizationOptions>(
+				options => {
+					var supportedCultures = new List<CultureInfo>
+					{
+								// new CultureInfo("fr"),
+								// new CultureInfo("fr-FR"),
+								// new CultureInfo("nl"),
+								// new CultureInfo("nl-BE"),
+								new CultureInfo("en-US"),
+								new CultureInfo("el-GR")
+								// new CultureInfo("el"),
+						};
+
+					options.DefaultRequestCulture = new RequestCulture("en-US");
+					options.SupportedCultures = supportedCultures;
+					options.SupportedUICultures = supportedCultures;
+				});
 
 			// services.AddScoped<IPieRepository, MockPieRepository>();
 			// services.AddScoped<ICategoryRepository, MockCategoryRepository>();
@@ -70,6 +100,10 @@ namespace Asp.NetCoreMVC
 			app.UseAuthorization();
 
 			app.UseNotyf();
+			app.UseRequestLocalization(
+				app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>().Value
+			);
+
 
 			app.UseEndpoints(endpoints => {
 				endpoints.MapControllerRoute(

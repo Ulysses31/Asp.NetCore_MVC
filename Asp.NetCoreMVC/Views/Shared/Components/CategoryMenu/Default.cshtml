@@ -1,4 +1,6 @@
-﻿@model IEnumerable<Category>
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@model IEnumerable<Category>
 
 <li class="dropdown">
 	<button class="btn btn-secondary dropdown-toggle"
@@ -7,7 +9,7 @@
 					data-toggle="dropdown"
 					aria-haspopup="true"
 					aria-expanded="false">
-		Pies
+		@Localizer["MenuPies"]
 	</button>
 	<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
 		@foreach (var category in Model)
@@ -24,7 +26,7 @@
 			 asp-controller="Pie"
 			 asp-action="List"
 			 asp-route-category="">
-			View all pies
+			@Localizer["MenuPiesAll"]
 		</a>
 	</div>
 </li>

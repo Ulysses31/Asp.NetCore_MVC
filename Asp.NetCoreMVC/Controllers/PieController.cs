@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Text.Encodings.Web;
 
 namespace Asp.NetCoreMVC.Controllers
 {
@@ -14,18 +15,21 @@ namespace Asp.NetCoreMVC.Controllers
 		private readonly IPieRepository _pieRepository;
 		private readonly IPieReviewRepository _pieReviewRepository;
 		private readonly ICategoryRepository _categoryRepository;
+		private readonly HtmlEncoder _htmlEncoder;
 
 		public PieController(
 			INotyfService notyf,
 			IPieRepository pieRepository,
 			IPieReviewRepository pieReviewRepository,
-			ICategoryRepository categoryRepository
+			ICategoryRepository categoryRepository,
+			HtmlEncoder htmlEncoder
 		)
 		{
 			this._notyf = notyf;
 			this._pieRepository = pieRepository;
 			this._pieReviewRepository = pieReviewRepository;
 			this._categoryRepository = categoryRepository;
+			this._htmlEncoder = htmlEncoder;
 		}
 
 		public ViewResult List(string category)
@@ -82,14 +86,15 @@ namespace Asp.NetCoreMVC.Controllers
 			if (ModelState.IsValid) {
 				_pieReviewRepository.AddPieReview(new PieReview() {
 					Pie = pie,
-					Review = review,
+					Review = _htmlEncoder.Encode(review),
 					UserId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value
 				});
+				_notyf.Success("Review saved!");
 			}
 
 			return View(new PieDetailViewModel() {
-				Pie = pie
-			});
+				Pie = _pieRepository.GetPieById(id)
+		});
 		}
 	}
 }

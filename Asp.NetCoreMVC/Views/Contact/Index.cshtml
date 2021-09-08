@@ -1,2 +1,6 @@
-﻿<h1>Click below to contact us</h1>
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+
+<h1>@Localizer["HeaderText"]</h1>
 <email address="iordanidischr@gmail.com" content="Click here"></email>

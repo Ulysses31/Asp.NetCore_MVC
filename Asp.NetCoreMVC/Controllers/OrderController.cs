@@ -57,6 +57,7 @@ namespace Asp.NetCoreMVC.Controllers
 		}
 
 		[HttpPost]
+		[ValidateAntiForgeryToken]
 		public IActionResult Checkout(Order order)
 		{
 			var items = _shoppingCart.GetShoppingCartItems();

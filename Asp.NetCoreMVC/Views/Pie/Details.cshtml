@@ -1,4 +1,5 @@
-﻿@model PieDetailViewModel
+﻿@using System.Net
+@model PieDetailViewModel
 
 <h2>Pie</h2>
 
@@ -18,23 +19,26 @@
 		 asp-action="List">
 		Pies
 	</a>
+
+	@*Reviews*@
 	<div style="margin-top: 20px">
 		<h3>Reviews</h3>
 		<hr />
 		@foreach (var review in Model.Pie.PieReviews)
 		{
-			if (review.User != null)
-			{
-<div class="alert alert-warning shadow-sm" role="alert">
-	<h5 class="alert-heading">
-		<i class="bi bi-people-fill"></i>
-		@review.User.UserName
-	</h5>
-	<hr />
-	<p>@review.Review</p>
-</div>}
-}
+			<div class="alert alert-warning shadow-sm" role="alert">
+				<h5 class="alert-heading">
+					<i class="bi bi-people-fill"></i>
+					@review.User.UserName
+				</h5>
+				<hr />
+				<p>@WebUtility.HtmlDecode(review.Review)</p>
+			</div>
+		}
 	</div>
+	@*Reviews*@
+
+	@*Reviews Form*@
 	<div style="margin-top: 20px">
 		<form method="post"
 					asp-controller="Pie"
@@ -53,17 +57,20 @@
 			</div>
 			<div class="form-group">
 				<div class="col-md-offset-2 col-md-10">
-					<input type="submit" class="btn btn-primary shadow-sm" value="Send review" />
+					<input type="submit" class="btn btn-primary shadow-sm" value="Send Review" />
 				</div>
 			</div>
 		</form>
 	</div>
 </div>
+@*Reviews Form*@
 
 @section Scripts {
 	<script>
-		// clear input on submit
-		document.querySelector("[name='Review']").value = "";
+		$(function () {
+			// clear input on submit
+			document.querySelector("[name='Review']").value = "";
+		});
 	</script>
-	
+
 }

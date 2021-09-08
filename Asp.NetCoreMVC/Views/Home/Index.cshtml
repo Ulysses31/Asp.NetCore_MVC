@@ -1,13 +1,16 @@
-﻿@model IEnumerable<Pie>
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@model IEnumerable<Pie>
+@inject IViewLocalizer Localizer
 
 @{
 	ViewData["Title"] = "Home Page";
+	ViewData["PiesOfTheWeek"] = Localizer["PiesOfTheWeek"];
 }
 
 <div class="text-center">
-	<h1 class="display-4">Welcome</h1>
+	<h1 class="display-4">@ViewData["PageTitle"]</h1>
 	<br />
-	<h2>Pies of the week.</h2>
+	<h2>@ViewData["PiesOfTheWeek"]</h2>
 	<br />
 	<div class="row row-cols-1 row-cols-md-2">
 		@foreach (var pie in @Model)

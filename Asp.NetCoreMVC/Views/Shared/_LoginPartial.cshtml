@@ -1,5 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc.Localization
 
+@inject IViewLocalizer Localizer
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
@@ -36,7 +38,7 @@
 				 id="register"
 				 asp-area="Identity"
 				 asp-page="/Account/Register">
-				Register
+				@Localizer["MenuRegister"]
 			</a>
 		</li>
 		<li class="nav-item">
@@ -44,7 +46,7 @@
 				 id="login"
 				 asp-area="Identity"
 				 asp-page="/Account/Login">
-				Login
+				@Localizer["MenuLogin"]
 			</a>
 		</li>
 	}
