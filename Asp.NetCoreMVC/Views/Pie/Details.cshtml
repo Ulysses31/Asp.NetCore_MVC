@@ -1,7 +1,9 @@
 ﻿@using System.Net
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 @model PieDetailViewModel
 
-<h2>Pie</h2>
+<h2>@Localizer["Title"]</h2>
 
 <div class="jumbotron">
 	<h1 class="display-4">@Model.Pie.Name @Model.Pie.Price.ToString("c")</h1>
@@ -12,17 +14,19 @@
 	<a class="btn btn-success shadow-sm"
 		 asp-controller="ShoppingCart"
 		 asp-action="AddToShoppingCart"
-		 asp-route-pieId="@Model.Pie.PieId">Add to cart</a>
+		 asp-route-pieId="@Model.Pie.PieId">
+		@Localizer["BtnAddToCart"]
+	</a>
 	<a class="btn btn-primary shadow-sm"
 		 role="button"
 		 asp-controller="Pie"
 		 asp-action="List">
-		Pies
+		@Localizer["PieList"]
 	</a>
 
 	@*Reviews*@
 	<div style="margin-top: 20px">
-		<h3>Reviews</h3>
+		<h3>@Localizer["ReviewsTitle"]</h3>
 		<hr />
 		@foreach (var review in Model.Pie.PieReviews)
 		{
@@ -44,12 +48,14 @@
 					asp-controller="Pie"
 					asp-action="Details"
 					role="form">
-			<h4>Write a review</h4>
+			<h4>@Localizer["WriteReview"]</h4>
 			<hr />
 			<input type="hidden" asp-for="@Model.Pie.PieId" />
 			<div asp-validation-summary="All"></div>
 			<div class="form-group">
-				<label asp-for="@Model.Review" class="col-md-2 control-label"></label>
+				<label asp-for="@Model.Review" class="col-md-2 control-label">
+					@Localizer["Review"]
+				</label>
 				<div class="col-md-10">
 					<textarea asp-for="@Model.Review" class="form-control" maxlength="255"></textarea>
 					<span asp-validation-for="@Model.Review" class="text-danger"></span>
@@ -57,7 +63,7 @@
 			</div>
 			<div class="form-group">
 				<div class="col-md-offset-2 col-md-10">
-					<input type="submit" class="btn btn-primary shadow-sm" value="Send Review" />
+					<input type="submit" class="btn btn-primary shadow-sm" value="@Localizer["SendReview"]" />
 				</div>
 			</div>
 		</form>
