@@ -117,16 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MenuLogin" xml:space="preserve">
-    <value>Login</value>
+  <data name="BtnDelete" xml:space="preserve">
+    <value>Διαγραφή</value>
   </data>
-  <data name="MenuLogout" xml:space="preserve">
-    <value>Logout</value>
+  <data name="BtnDownload" xml:space="preserve">
+    <value>Κατέβασμα</value>
   </data>
-  <data name="MenuRegister" xml:space="preserve">
-    <value>Register</value>
+  <data name="MenuDeleteContent" xml:space="preserve">
+    <value>Η διαγραφή αυτών των δεδομένων θα καταργήσει οριστικά το λογαριασμό σας και αυτό δεν μπορεί να ανακτηθεί.</value>
   </data>
-  <data name="MenuWelcome" xml:space="preserve">
-    <value>Hello</value>
+  <data name="MenuHeader" xml:space="preserve">
+    <value>Προσωπικά Δεδομένα</value>
+  </data>
+  <data name="MenuSubContent" xml:space="preserve">
+    <value>Ο λογαριασμός σας περιέχει προσωπικά δεδομένα που μας έχετε δώσει. Αυτή η σελίδα σας επιτρέπει να κατεβάσετε ή να διαγράψετε αυτά τα δεδομένα.</value>
   </data>
 </root>

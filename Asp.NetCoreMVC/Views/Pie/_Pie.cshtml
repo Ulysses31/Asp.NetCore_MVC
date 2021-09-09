@@ -1,4 +1,6 @@
-﻿@model Pie
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@model Pie
+@inject IViewLocalizer Localizer
 
 <tr>
 	<td nowrap>@Model.PieId</td>
@@ -27,6 +29,8 @@
 		<a class="btn btn-sm btn-success shadow-sm"
 			 asp-controller="ShoppingCart"
 			 asp-action="AddToShoppingCart"
-			 asp-route-pieId="@Model.PieId">Add to cart</a>
+			 asp-route-pieId="@Model.PieId">
+			@Localizer["BtnAdd"]
+		</a>
 	</td>
 </tr>

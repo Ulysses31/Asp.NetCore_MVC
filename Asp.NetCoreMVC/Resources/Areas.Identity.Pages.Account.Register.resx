@@ -117,16 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MenuLogin" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="MenuLogout" xml:space="preserve">
-    <value>Logout</value>
-  </data>
-  <data name="MenuRegister" xml:space="preserve">
+  <data name="FormBtnSubmit" xml:space="preserve">
     <value>Register</value>
   </data>
-  <data name="MenuWelcome" xml:space="preserve">
-    <value>Hello</value>
+  <data name="FormEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="FormPassword" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="FormPasswordConfirm" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="HeaderText" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="RegisterNewUser" xml:space="preserve">
+    <value>Register as a new user</value>
+  </data>
+  <data name="ServiceRegisterContent" xml:space="preserve">
+    <value>There are no external authentication services configured. See &lt;a href="https://go.microsoft.com/fwlink/?LinkID=532715" target="_blank"&gt;this article&lt;/a&gt; for details on setting up this application to support logging in via external services.</value>
+  </data>
+  <data name="ServiceRegisterHeader" xml:space="preserve">
+    <value>Use another service to register.</value>
+  </data>
+  <data name="SubHeader" xml:space="preserve">
+    <value>Create a new account.</value>
   </data>
 </root>

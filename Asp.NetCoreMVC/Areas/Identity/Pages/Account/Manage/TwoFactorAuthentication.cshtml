@@ -1,0 +1,79 @@
+﻿@page
+
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@model TwoFactorAuthenticationModel
+
+@{
+	ViewData["Title"] = Localizer["MenuHeader"];
+	ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<h4>@ViewData["Title"]</h4>
+@if (Model.Is2faEnabled)
+{
+	if (Model.RecoveryCodesLeft == 0)
+	{
+		<div class="alert alert-danger">
+			<strong>@Localizer["RecovCodes0Head"]</strong>
+			<p>@Localizer["RecovCodes0First"] <a asp-page="./GenerateRecoveryCodes">@Localizer["RecovCodes0Link"]</a> @Localizer["RecovCodes0Second"]</p>
+		</div>
+	}
+	else if (Model.RecoveryCodesLeft == 1)
+	{
+		<div class="alert alert-danger">
+			<strong>@Localizer["RecovCodes1Head"]</strong>
+			<p>@Localizer["RecovCodes1First"] <a asp-page="./GenerateRecoveryCodes">@Localizer["RecovCodes1Link"]</a>.</p>
+		</div>
+	}
+	else if (Model.RecoveryCodesLeft <= 3)
+	{
+		<div class="alert alert-warning">
+			<strong>@Localizer["RecovCodes3HeadA"] @Model.RecoveryCodesLeft @Localizer["RecovCodes3HeadB"]</strong>
+			<p>@Localizer["RecovCodes3HeadAA"] <a asp-page="./GenerateRecoveryCodes">@Localizer["RecovCodes3HeadBB"]</a>.</p>
+		</div>
+	}
+
+	if (Model.IsMachineRemembered)
+	{
+		<form method="post" style="display: inline-block">
+			<button type="submit" class="btn btn-primary">
+				@Localizer["BtnFormForget"]
+			</button>
+		</form>
+	}
+	<a asp-page="./Disable2fa" class="btn btn-primary">
+		@Localizer["BtnDisable2FA"]
+	</a>
+	<a asp-page="./GenerateRecoveryCodes" class="btn btn-primary">
+		@Localizer["BtnRecoveryReset"]
+	</a>
+}
+
+<h5>@Localizer["MenuSubContent"]</h5>
+@if (!Model.HasAuthenticator)
+{
+	<a id="enable-authenticator"
+		 asp-page="./EnableAuthenticator"
+		 class="btn btn-primary">
+		@Localizer["BtnAddAuth"]
+	</a>
+}
+else
+{
+	<a id="enable-authenticator"
+		 asp-page="./EnableAuthenticator"
+		 class="btn btn-primary">
+		@Localizer["SetupAuthApp"]
+	</a>
+	<a id="reset-authenticator"
+		 asp-page="./ResetAuthenticator"
+		 class="btn btn-primary">
+		@Localizer["ResetAuthApp"]
+	</a>
+}
+
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+}

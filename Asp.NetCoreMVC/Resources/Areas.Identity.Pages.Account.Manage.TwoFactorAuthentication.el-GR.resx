@@ -117,16 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MenuLogin" xml:space="preserve">
-    <value>Login</value>
+  <data name="BtnAddAuth" xml:space="preserve">
+    <value>Προσθήκη εφαρμογής ελέγχου ταυτότητας</value>
   </data>
-  <data name="MenuLogout" xml:space="preserve">
-    <value>Logout</value>
+  <data name="BtnDisable2FA" xml:space="preserve">
+    <value>Απενεργοποίηση 2FA</value>
   </data>
-  <data name="MenuRegister" xml:space="preserve">
-    <value>Register</value>
+  <data name="BtnFormForget" xml:space="preserve">
+    <value>Ξεχάστε αυτό το πρόγραμμα περιήγησης</value>
   </data>
-  <data name="MenuWelcome" xml:space="preserve">
-    <value>Hello</value>
+  <data name="BtnRecoveryReset" xml:space="preserve">
+    <value>Επαναφορά κωδικών ανάκτησης</value>
+  </data>
+  <data name="MenuHeader" xml:space="preserve">
+    <value>Έλεγχος ταυτότητας δύο παραγόντων (2FA)</value>
+  </data>
+  <data name="MenuSubContent" xml:space="preserve">
+    <value>Εφαρμογή "Έλεγχος ταυτότητας"</value>
+  </data>
+  <data name="RecovCodes0First" xml:space="preserve">
+    <value>Πρέπει να</value>
+  </data>
+  <data name="RecovCodes0Head" xml:space="preserve">
+    <value>Δεν σας έχουν μείνει κωδικοί ανάκτησης.</value>
+  </data>
+  <data name="RecovCodes0Link" xml:space="preserve">
+    <value>δημιουργήστε ένα νέο σύνολο κωδικών αποκατάστασης.</value>
+  </data>
+  <data name="RecovCodes0Second" xml:space="preserve">
+    <value>για να μπορέσετε να συνδεθείτε με έναν κωδικό αποκατάστασης.</value>
+  </data>
+  <data name="RecovCodes1First" xml:space="preserve">
+    <value>Μπορείτε να</value>
+  </data>
+  <data name="RecovCodes1Head" xml:space="preserve">
+    <value>Σας έχει μείνει 1 κωδικός ανάκτησης.</value>
+  </data>
+  <data name="RecovCodes1Link" xml:space="preserve">
+    <value>δημιουργήστε ένα νέο σύνολο κωδικών αποκατάστασης.</value>
+  </data>
+  <data name="RecovCodes3HeadA" xml:space="preserve">
+    <value>Έχετε</value>
+  </data>
+  <data name="RecovCodes3HeadAA" xml:space="preserve">
+    <value>Θα πρέπει να</value>
+  </data>
+  <data name="RecovCodes3HeadB" xml:space="preserve">
+    <value>κωδικούς ανάκτησης που απομένουν.</value>
+  </data>
+  <data name="RecovCodes3HeadBB" xml:space="preserve">
+    <value>δημιουργήστε ένα νέο σύνολο κωδικών αποκατάστασης.</value>
+  </data>
+  <data name="ResetAuthApp" xml:space="preserve">
+    <value>Επαναφορά εφαρμογής ελέγχου ταυτότητας</value>
+  </data>
+  <data name="SetupAuthApp" xml:space="preserve">
+    <value>Ρύθμιση εφαρμογής ελέγχου ταυτότητας</value>
   </data>
 </root>

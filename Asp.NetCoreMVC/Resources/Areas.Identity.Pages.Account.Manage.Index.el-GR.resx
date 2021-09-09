@@ -117,16 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MenuLogin" xml:space="preserve">
-    <value>Login</value>
+  <data name="BtnSave" xml:space="preserve">
+    <value>Αποθήκευση</value>
   </data>
-  <data name="MenuLogout" xml:space="preserve">
-    <value>Logout</value>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Τηλέφωνο</value>
   </data>
-  <data name="MenuRegister" xml:space="preserve">
-    <value>Register</value>
+  <data name="Title" xml:space="preserve">
+    <value>Προφίλ</value>
   </data>
-  <data name="MenuWelcome" xml:space="preserve">
-    <value>Hello</value>
+  <data name="UserName" xml:space="preserve">
+    <value>Όνομα χρήστη</value>
   </data>
 </root>
