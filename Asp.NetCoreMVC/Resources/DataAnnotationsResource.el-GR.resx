@@ -117,49 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Address" xml:space="preserve">
-    <value>Address</value>
+  <data name="DisplayCurPassword" xml:space="preserve">
+    <value>Τρέχων κωδικός πρόσβασης</value>
   </data>
-  <data name="Amount" xml:space="preserve">
-    <value>Amount</value>
+  <data name="DisplayNewPassword" xml:space="preserve">
+    <value>Νέος Κωδικός</value>
   </data>
-  <data name="City" xml:space="preserve">
-    <value>City</value>
+  <data name="LoadUserID" xml:space="preserve">
+    <value>Δεν είναι δυνατή η φόρτωση του χρήστη με αναγνωριστικό</value>
   </data>
-  <data name="Country" xml:space="preserve">
-    <value>Country</value>
+  <data name="StatusMessage" xml:space="preserve">
+    <value>Ο κωδικός σας έχει αλλάξει.</value>
   </data>
-  <data name="Image" xml:space="preserve">
-    <value>Image</value>
+  <data name="ValidationConfirmPasswordDisplay" xml:space="preserve">
+    <value>Επιβεβαιώστε τον καινούριο σας κωδικό</value>
   </data>
-  <data name="Name" xml:space="preserve">
-    <value>Name</value>
+  <data name="ValidationMatchPassword" xml:space="preserve">
+    <value>Ο νέος κωδικός πρόσβασης και ο κωδικός επιβεβαίωσης δεν ταιριάζουν.</value>
   </data>
-  <data name="NoOrders" xml:space="preserve">
-    <value>No Orders found.</value>
+  <data name="ValidationNewPasswordRequired" xml:space="preserve">
+    <value>Απαιτείται το πεδίο Νέος κωδικός πρόσβασης.</value>
   </data>
-  <data name="OrderCompleted" xml:space="preserve">
-    <value>Order completed at</value>
+  <data name="ValidationNewPasswordString" xml:space="preserve">
+    <value>Ο νέος κωδικός πρέπει να έχει τουλάχιστον {2} και μέγιστο {1} χαρακτήρες.</value>
   </data>
-  <data name="OrderItems" xml:space="preserve">
-    <value>Total items</value>
-  </data>
-  <data name="Pie" xml:space="preserve">
-    <value>Pie</value>
-  </data>
-  <data name="Price" xml:space="preserve">
-    <value>Price</value>
-  </data>
-  <data name="Shipper" xml:space="preserve">
-    <value>Shipper</value>
-  </data>
-  <data name="SubTotal" xml:space="preserve">
-    <value>SubTotal</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>Orders</value>
-  </data>
-  <data name="Total" xml:space="preserve">
-    <value>Total</value>
+  <data name="ValidationOldPasswordRequired" xml:space="preserve">
+    <value>Απαιτείται ο τρέχων κωδικός πρόσβασης.</value>
   </data>
 </root>

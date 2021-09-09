@@ -117,49 +117,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Address" xml:space="preserve">
-    <value>Address</value>
+  <data name="ListA" xml:space="preserve">
+    <value>Κατεβάστε μια εφαρμογή ελέγχου ταυτότητας δύο παραγόντων όπως το Microsoft Authenticator για
+&lt;a href="https://go.microsoft.com/fwlink/?Linkid=825072"&gt; Android &lt;/a&gt; και
+&lt;a href="https://go.microsoft.com/fwlink/?Linkid=825073"&gt; iOS &lt;/a&gt; ή
+Επαληθευτής Google για
+&lt;a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&amp;amp;hl=el"&gt; Android &lt;/a&gt; και
+&lt;a href="https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8"&gt; iOS &lt;/a&gt;.</value>
   </data>
-  <data name="Amount" xml:space="preserve">
-    <value>Amount</value>
+  <data name="ListB" xml:space="preserve">
+    <value>&lt;p&gt; Σαρώστε τον κωδικό QR ή εισαγάγετε αυτό το κλειδί &lt;kbd&gt;@Model.SharedKey &lt;/kbd&gt; στην εφαρμογή ελέγχου ταυτότητας δύο παραγόντων. Οι χώροι και το περίβλημα δεν έχουν σημασία. &lt;/p&gt;
+&lt;div class = "alert alert-info"&gt; Μάθετε πώς μπορείτε να &lt;a href="https://go.microsoft.com/fwlink/?Linkid=852423"&gt; ενεργοποιήσετε τη δημιουργία κώδικα QR &lt;/a&gt;. &lt;/div&gt;</value>
   </data>
-  <data name="City" xml:space="preserve">
-    <value>City</value>
+  <data name="ListParA" xml:space="preserve">
+    <value>Σάρωση του κωδικού QR ή εισαγωγή αυτού του κλειδιού</value>
   </data>
-  <data name="Country" xml:space="preserve">
-    <value>Country</value>
+  <data name="ListParB" xml:space="preserve">
+    <value>στην εφαρμογή ελέγχου ταυτότητας δύο παραγόντων.</value>
   </data>
-  <data name="Image" xml:space="preserve">
-    <value>Image</value>
+  <data name="ParagraphDescr" xml:space="preserve">
+    <value>Αφού σαρώσετε τον κωδικό QR ή εισαγάγετε το παραπάνω κλειδί, η εφαρμογή ελέγχου ταυτότητας δύο παραγόντων θα σας παρέχει
+με μοναδικό κωδικό. Εισαγάγετε τον κωδικό στο παρακάτω πλαίσιο επιβεβαίωσης.</value>
   </data>
-  <data name="Name" xml:space="preserve">
-    <value>Name</value>
+  <data name="QRAnchor" xml:space="preserve">
+    <value>Μάθετε πώς μπορείτε να &lt;a href="https://go.microsoft.com/fwlink/?Linkid=852423"&gt; ενεργοποιήσετε τη δημιουργία κώδικα QR &lt;/a&gt;.</value>
   </data>
-  <data name="NoOrders" xml:space="preserve">
-    <value>No Orders found.</value>
-  </data>
-  <data name="OrderCompleted" xml:space="preserve">
-    <value>Order completed at</value>
-  </data>
-  <data name="OrderItems" xml:space="preserve">
-    <value>Total items</value>
-  </data>
-  <data name="Pie" xml:space="preserve">
-    <value>Pie</value>
-  </data>
-  <data name="Price" xml:space="preserve">
-    <value>Price</value>
-  </data>
-  <data name="Shipper" xml:space="preserve">
-    <value>Shipper</value>
-  </data>
-  <data name="SubTotal" xml:space="preserve">
-    <value>SubTotal</value>
+  <data name="SubHeader" xml:space="preserve">
+    <value>Για να χρησιμοποιήσετε μια εφαρμογή ελέγχου ταυτότητας, ακολουθήστε τα ακόλουθα βήματα:</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Orders</value>
+    <value>Διαμόρφωση εφαρμογής ελέγχου ταυτότητας</value>
   </data>
-  <data name="Total" xml:space="preserve">
-    <value>Total</value>
+  <data name="Verification" xml:space="preserve">
+    <value>Κωδικός επαλήθευσης</value>
+  </data>
+  <data name="Verify" xml:space="preserve">
+    <value>Επαλήθευση</value>
   </data>
 </root>

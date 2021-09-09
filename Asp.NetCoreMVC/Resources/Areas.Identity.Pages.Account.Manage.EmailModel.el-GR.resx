@@ -117,49 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Address" xml:space="preserve">
-    <value>Address</value>
+  <data name="ConfirmAccount" xml:space="preserve">
+    <value>Παρακαλούμε επιβεβαιώστε τον λογαριασμό σας ως</value>
   </data>
-  <data name="Amount" xml:space="preserve">
-    <value>Amount</value>
+  <data name="ConfirmEmail" xml:space="preserve">
+    <value>Επιβεβαιώστε το email σας</value>
   </data>
-  <data name="City" xml:space="preserve">
-    <value>City</value>
+  <data name="ConfirmEmailB" xml:space="preserve">
+    <value>πατώντας εδώ</value>
   </data>
-  <data name="Country" xml:space="preserve">
-    <value>Country</value>
+  <data name="OnGetMessage" xml:space="preserve">
+    <value>Δεν είναι δυνατή η φόρτωση του χρήστη με αναγνωριστικό.</value>
   </data>
-  <data name="Image" xml:space="preserve">
-    <value>Image</value>
+  <data name="OnPostMessage" xml:space="preserve">
+    <value>Δεν είναι δυνατή η φόρτωση του χρήστη με αναγνωριστικό.</value>
   </data>
-  <data name="Name" xml:space="preserve">
-    <value>Name</value>
+  <data name="OnPostSender" xml:space="preserve">
+    <value>Δεν είναι δυνατή η φόρτωση του χρήστη με αναγνωριστικό.</value>
   </data>
-  <data name="NoOrders" xml:space="preserve">
-    <value>No Orders found.</value>
+  <data name="Status" xml:space="preserve">
+    <value>Το email επαλήθευσης εστάλη. Παρακαλούμε ελέγξτε το email σας.</value>
   </data>
-  <data name="OrderCompleted" xml:space="preserve">
-    <value>Order completed at</value>
+  <data name="StatusChangeEmail" xml:space="preserve">
+    <value>Το email σας δεν άλλαξε.</value>
   </data>
-  <data name="OrderItems" xml:space="preserve">
-    <value>Total items</value>
-  </data>
-  <data name="Pie" xml:space="preserve">
-    <value>Pie</value>
-  </data>
-  <data name="Price" xml:space="preserve">
-    <value>Price</value>
-  </data>
-  <data name="Shipper" xml:space="preserve">
-    <value>Shipper</value>
-  </data>
-  <data name="SubTotal" xml:space="preserve">
-    <value>SubTotal</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>Orders</value>
-  </data>
-  <data name="Total" xml:space="preserve">
-    <value>Total</value>
+  <data name="StatusConfirmEmail" xml:space="preserve">
+    <value>Σύνδεσμος επιβεβαίωσης για την αποστολή του μηνύματος ηλεκτρονικού ταχυδρομείου. Παρακαλούμε ελέγξτε το email σας.</value>
   </data>
 </root>

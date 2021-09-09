@@ -117,49 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Address" xml:space="preserve">
-    <value>Address</value>
+  <data name="BtnSave" xml:space="preserve">
+    <value>Αποθήκευση</value>
   </data>
-  <data name="Amount" xml:space="preserve">
-    <value>Amount</value>
+  <data name="Error" xml:space="preserve">
+    <value>Μη αναμενόμενο σφάλμα κατά την προσπάθεια ρύθμισης αριθμού τηλεφώνου.</value>
   </data>
-  <data name="City" xml:space="preserve">
-    <value>City</value>
+  <data name="OnGetAsync" xml:space="preserve">
+    <value>Δεν είναι δυνατή η φόρτωση του χρήστη με αναγνωριστικό</value>
   </data>
-  <data name="Country" xml:space="preserve">
-    <value>Country</value>
+  <data name="OnPostAsync" xml:space="preserve">
+    <value>Δεν είναι δυνατή η φόρτωση του χρήστη με αναγνωριστικό</value>
   </data>
-  <data name="Image" xml:space="preserve">
-    <value>Image</value>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Τηλέφωνο</value>
   </data>
-  <data name="Name" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="NoOrders" xml:space="preserve">
-    <value>No Orders found.</value>
-  </data>
-  <data name="OrderCompleted" xml:space="preserve">
-    <value>Order completed at</value>
-  </data>
-  <data name="OrderItems" xml:space="preserve">
-    <value>Total items</value>
-  </data>
-  <data name="Pie" xml:space="preserve">
-    <value>Pie</value>
-  </data>
-  <data name="Price" xml:space="preserve">
-    <value>Price</value>
-  </data>
-  <data name="Shipper" xml:space="preserve">
-    <value>Shipper</value>
-  </data>
-  <data name="SubTotal" xml:space="preserve">
-    <value>SubTotal</value>
+  <data name="Status" xml:space="preserve">
+    <value>Το προφίλ σας ενημερώθηκε.</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Orders</value>
+    <value>Προφίλ</value>
   </data>
-  <data name="Total" xml:space="preserve">
-    <value>Total</value>
+  <data name="UserName" xml:space="preserve">
+    <value>Όνομα χρήστη</value>
   </data>
 </root>

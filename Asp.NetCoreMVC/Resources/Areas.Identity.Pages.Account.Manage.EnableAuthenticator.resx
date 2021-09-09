@@ -117,49 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Address" xml:space="preserve">
-    <value>Address</value>
+  <data name="ListA" xml:space="preserve">
+    <value>Download a two-factor authenticator app like Microsoft Authenticator for
+				&lt;a href="https://go.microsoft.com/fwlink/?Linkid=825072"&gt;Android&lt;/a&gt; and
+				&lt;a href="https://go.microsoft.com/fwlink/?Linkid=825073"&gt;iOS&lt;/a&gt; or
+				Google Authenticator for
+				&lt;a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&amp;amp;hl=en"&gt;Android&lt;/a&gt; and
+				&lt;a href="https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8"&gt;iOS&lt;/a&gt;.</value>
   </data>
-  <data name="Amount" xml:space="preserve">
-    <value>Amount</value>
+  <data name="ListParA" xml:space="preserve">
+    <value>Scan the QR Code or enter this key</value>
   </data>
-  <data name="City" xml:space="preserve">
-    <value>City</value>
+  <data name="ListParB" xml:space="preserve">
+    <value>into your two factor authenticator app. Spaces and casing do not matter.</value>
   </data>
-  <data name="Country" xml:space="preserve">
-    <value>Country</value>
+  <data name="ParagraphDescr" xml:space="preserve">
+    <value>Once you have scanned the QR code or input the key above, your two factor authentication app will provide you
+				with a unique code. Enter the code in the confirmation box below.</value>
   </data>
-  <data name="Image" xml:space="preserve">
-    <value>Image</value>
+  <data name="QRAnchor" xml:space="preserve">
+    <value>Learn how to &lt;a href="https://go.microsoft.com/fwlink/?Linkid=852423"&gt;enable QR code generation&lt;/a&gt;.</value>
   </data>
-  <data name="Name" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="NoOrders" xml:space="preserve">
-    <value>No Orders found.</value>
-  </data>
-  <data name="OrderCompleted" xml:space="preserve">
-    <value>Order completed at</value>
-  </data>
-  <data name="OrderItems" xml:space="preserve">
-    <value>Total items</value>
-  </data>
-  <data name="Pie" xml:space="preserve">
-    <value>Pie</value>
-  </data>
-  <data name="Price" xml:space="preserve">
-    <value>Price</value>
-  </data>
-  <data name="Shipper" xml:space="preserve">
-    <value>Shipper</value>
-  </data>
-  <data name="SubTotal" xml:space="preserve">
-    <value>SubTotal</value>
+  <data name="SubHeader" xml:space="preserve">
+    <value>To use an authenticator app go through the following steps:</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Orders</value>
+    <value>Configure authenticator app</value>
   </data>
-  <data name="Total" xml:space="preserve">
-    <value>Total</value>
+  <data name="Verification" xml:space="preserve">
+    <value>Verification Code</value>
+  </data>
+  <data name="Verify" xml:space="preserve">
+    <value>Verify</value>
   </data>
 </root>

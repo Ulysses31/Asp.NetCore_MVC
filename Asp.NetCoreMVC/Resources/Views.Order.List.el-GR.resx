@@ -135,6 +135,9 @@
   <data name="Name" xml:space="preserve">
     <value>Όνομα</value>
   </data>
+  <data name="NoOrders" xml:space="preserve">
+    <value>Δεν βρέθηκαν παραγγελίες.</value>
+  </data>
   <data name="OrderCompleted" xml:space="preserve">
     <value>Ολοκλήρωση παραγγελίας στις</value>
   </data>

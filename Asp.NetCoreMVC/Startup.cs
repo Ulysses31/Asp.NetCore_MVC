@@ -67,6 +67,13 @@ namespace Asp.NetCoreMVC
 					options.SupportedUICultures = supportedCultures;
 				});
 
+			// Localization Model Annotations
+			services.AddMvc().AddDataAnnotationsLocalization(o => {
+				o.DataAnnotationLocalizerProvider = (type, factory) => {
+					return factory.Create(typeof(DataAnnotationsResource));
+				};
+			});
+
 			// services.AddScoped<IPieRepository, MockPieRepository>();
 			// services.AddScoped<ICategoryRepository, MockCategoryRepository>();
 			services.AddScoped<IPieRepository, PieRepository>();
@@ -103,7 +110,6 @@ namespace Asp.NetCoreMVC
 			app.UseRequestLocalization(
 				app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>().Value
 			);
-
 
 			app.UseEndpoints(endpoints => {
 				endpoints.MapControllerRoute(
