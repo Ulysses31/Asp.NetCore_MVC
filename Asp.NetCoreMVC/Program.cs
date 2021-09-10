@@ -18,6 +18,12 @@ namespace Asp.NetCoreMVC
 
 		public static IHostBuilder CreateHostBuilder(string[] args) =>
 				Host.CreateDefaultBuilder(args)
+						.ConfigureLogging(logging => {
+							logging.ClearProviders();
+							logging.AddConsole();
+							logging.AddDebug();
+							logging.AddEventLog();
+						})
 						.ConfigureWebHostDefaults(webBuilder =>
 						{
 							webBuilder.UseStartup<Startup>();

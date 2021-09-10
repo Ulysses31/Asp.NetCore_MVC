@@ -54,7 +54,9 @@
 								@Localizer["MenuOrders"]
 							</a>
 						</li>
-						@await Component.InvokeAsync("CategoryMenu")
+						<cache expires-after="@TimeSpan.FromSeconds(20)">
+							@await Component.InvokeAsync("CategoryMenu")
+						</cache>
 						&nbsp;&nbsp;
 						@await Component.InvokeAsync("ShoppingCartSummary")
 					</ul>

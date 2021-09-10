@@ -2,6 +2,7 @@
 using Asp.NetCoreMVC.Models.ViewModels;
 using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
@@ -57,9 +58,14 @@ namespace Asp.NetCoreMVC.Controllers
 		}
 
 		[HttpPost]
+		[RequireHttps]
 		[ValidateAntiForgeryToken]
 		public IActionResult Checkout(Order order)
 		{
+			if(!Request.IsHttps) {
+				return new StatusCodeResult(StatusCodes.Status403Forbidden);
+			}
+
 			var items = _shoppingCart.GetShoppingCartItems();
 			_shoppingCart.ShoppingCartItems = items;
 

@@ -1,3 +1,4 @@
+using Asp.NetCoreMVC.Filters;
 using Asp.NetCoreMVC.Models;
 using AspNetCoreHero.ToastNotification;
 using AspNetCoreHero.ToastNotification.Extensions;
@@ -6,13 +7,16 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 
 namespace Asp.NetCoreMVC
 {
@@ -44,11 +48,14 @@ namespace Asp.NetCoreMVC
 
 			// Localization
 			services.AddLocalization(opts => { opts.ResourcesPath = "Resources"; });
-			services.AddMvc()
-				.AddViewLocalization(
+			services.AddMvc(
+				// configure here a global filter
+				config => config.Filters.AddService(typeof(TimerActionAttribute))	
+			)
+			.AddViewLocalization(
 						LanguageViewLocationExpanderFormat.Suffix,
 						opts => { opts.ResourcesPath = "Resources"; })
-				.AddDataAnnotationsLocalization();
+			.AddDataAnnotationsLocalization();
 			services.Configure<RequestLocalizationOptions>(
 				options => {
 					var supportedCultures = new List<CultureInfo>
@@ -84,12 +91,31 @@ namespace Asp.NetCoreMVC
 			// get current shopping cart
 			services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
 
+			// Compression with gzip 
+			services.AddResponseCompression(options => {
+				options.EnableForHttps = true;
+				options.MimeTypes =
+						ResponseCompressionDefaults.MimeTypes.Concat(new[] { "imagejpeg" });
+			});
+
+			services.Configure<GzipCompressionProviderOptions>
+					(options => options.Level =
+							System.IO.Compression.CompressionLevel.Optimal);
+
 			services.AddControllersWithViews();
 			services.AddHttpContextAccessor();
+			services.AddMemoryCache();
 			services.AddSession();
+			
+			// Filters
+			services.AddScoped<TimerActionAttribute>();
+			services.AddApplicationInsightsTelemetry();
 		}
 
-		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+		public void Configure(
+			IApplicationBuilder app, 
+			IWebHostEnvironment env
+		)
 		{
 			if (env.IsDevelopment()) {
 				app.UseDeveloperExceptionPage();
@@ -98,6 +124,10 @@ namespace Asp.NetCoreMVC
 				app.UseExceptionHandler("/Home/Error");
 				app.UseHsts();
 			}
+
+			// app.UseWelcomePage();
+			app.UseResponseCompression();
+
 			app.UseHttpsRedirection();
 			app.UseStaticFiles();
 			app.UseSession();
@@ -107,6 +137,7 @@ namespace Asp.NetCoreMVC
 			app.UseAuthorization();
 
 			app.UseNotyf();
+			
 			app.UseRequestLocalization(
 				app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>().Value
 			);
