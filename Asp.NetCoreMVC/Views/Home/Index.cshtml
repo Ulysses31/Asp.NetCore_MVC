@@ -10,7 +10,9 @@
 <div class="text-center">
 	<h1 class="display-4">@ViewData["PageTitle"]</h1>
 	<br />
-	<h2>@ViewData["PiesOfTheWeek"]</h2>
+	<partial name="_PieSlider" />
+	<br />
+	<h1 class="display-4">@ViewData["PiesOfTheWeek"]</h1>
 	<br />
 	<div class="row row-cols-1 row-cols-md-2">
 		@foreach (var pie in @Model)
@@ -18,5 +20,4 @@
 			<partial name="_PieOfTheWeek" model="@pie" />
 		}
 	</div>
-
 </div>
